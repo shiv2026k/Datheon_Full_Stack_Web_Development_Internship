@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Task Manager | CRUD Engine</title>
+    <link rel="stylesheet" href="task-style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Productivity <span>Tracker</span></h1>
+            <p>Task engine with automated browser localStorage persistence</p>
+        </header>
+
+        <!-- Task Input Section Form -->
+        <section class="input-card">
+            <form id="task-form">
+                <div class="form-group">
+                    <input type="text" id="task-title" placeholder="What needs to be done?" required>
+                </div>
+                <div class="form-row">
+                    <select id="task-category">
+                        <option value="Work">💼 Work</option>
+                        <option value="Personal">🏠 Personal</option>
+                        <option value="Study">📚 Study</option>
+                    </select>
+                    <input type="date" id="task-date" required>
+                    <button type="submit" class="btn-add">Add Task</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Filters Grid -->
+        <section class="filter-bar">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="Active">Active</button>
+            <button class="filter-btn" data-filter="Completed">Completed</button>
+        </section>
+
+        <!-- Task Render Loop Container -->
+        <main class="task-list-container">
+            <ul id="task-list" class="task-list"></ul>
+        </main>
+    </div>
+
+    <script src="task-script.js"></script>
+</body>
+</html>
